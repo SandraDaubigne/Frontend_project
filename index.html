@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/app.js"></script>
+</head>
+<body>
+<div id ="master-flex">
+
+    <div id="head">
+        <h1>todos</h1> 
+     </div>
+
+     <div id="input">
+        <label>
+            <input type="checkbox" onClick="selectAll(this)"> 
+            <span class="checkbox-custom">SelAll</span>
+        </label> 
+        <form onsubmit="addItemToList(event)" action="">
+            <input type="text" id="todo" placeholder="what needs to be done?">       
+        </form>
+    </div>
+
+    <div id="output"> 
+        <ul id="list"></ul>         
+    </div>
+
+    <div id ="buttons">
+        <div>
+            <p>Item left:</p>
+            <p id="left"></p>
+        </div>
+        
+        <label onclick="showAll()">
+            <input type="checkbox"> 
+            <span>All</span>
+        </label> 
+
+        <label onclick="active()">
+            <input type="checkbox"><span>Active</span>
+        </label> 
+
+        <label onclick="completed()">
+            <input type="checkbox"><span>Completed</span>
+        </label> 
+
+        <label onClick="removeCompleted()">
+            <input type="checkbox" ><span>Clear Completed</span>
+        </label> 
+    </div>
+
+    <div id="foot">
+        <p>Doubleclick to edit a togo</p> 
+        <p>Part of ToDo</p> 
+        <p>Made by Sandra dÁubigné</p> 
+    </div>
+        
+    
+</div>   
+</body>
+</html>
