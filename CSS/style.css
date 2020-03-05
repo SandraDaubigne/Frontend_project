@@ -81,7 +81,7 @@ h1{
 }
 
 #output label{
-  border: 1px solid black;
+  border: 1px solid #e9e6e6;;
   border-radius: 50%;
   height: 3vw;
   width: 3vw;
@@ -89,8 +89,9 @@ h1{
 }
 
 .box:checked + label{
-  background-color: crimson;  
- }
+  background: url(../IMG/checkmark_30.svg); 
+  background-repeat: no-repeat;
+}
 
 /* --------BUTTONS--------- */
 #buttons{
