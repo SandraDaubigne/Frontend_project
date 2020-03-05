@@ -8,19 +8,19 @@
     <script src="JS/app.js"></script>
 </head>
 <body>
-<div id ="master-flex">
-
+    
     <div id="head">
         <h1>todos</h1> 
      </div>
 
-     <div id="input">
-        <label>
+<div id ="master-flex">
+     
+    <div id="input">
+        <label class="border">
             <input type="checkbox" onClick="selectAll(this)"> 
-            <span class="checkbox-custom">SelAll</span>
         </label> 
         <form onsubmit="addItemToList(event)" action="">
-            <input type="text" id="todo" placeholder="what needs to be done?">       
+            <input id="todo" type="text" placeholder="what needs to be done?">       
         </form>
     </div>
 
