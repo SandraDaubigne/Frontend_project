@@ -16,10 +16,7 @@
            select.setAttribute("class","box");
            button.setAttribute("class","delete");
            label.setAttribute("class", "box-label" );
-       
-           //Kan bara ha ett id per lista
-           //label för att få klickfunktionen så att chekcboxen fungerar
-           //Gör ett uuid för select som input använder sen.
+    
            let d = new Date();
            select.setAttribute("id", d);
            label.setAttribute("for", d);       
@@ -34,9 +31,6 @@
        
            function writeFromScript(){
                list.appendChild(li);
-               // upptänkte att om det är nåt som ska vara
-               //förälder sen så måste de skapas innan
-               //barnet skapas för att hamna i rätt ordning
                li.appendChild(select);
                li.appendChild(label);
                li.appendChild(textNode);
@@ -68,7 +62,7 @@
                let texts = document.querySelectorAll('li');
                    for(let i = 0; i<texts.length; i++){ 
                        let txt = texts[i];
-                       texts[i].style.display = "grid";
+                       texts[i].style.display = "flex";
                    }      
            }
        
@@ -78,9 +72,13 @@
                     
                    for(let i = 0; i<boxes.length; i++){
                        let box = boxes[i];
+                       let txt = texts[i];
                        if(box.checked){
                         texts[i].style.display = "none";  
+                       }else{
+                        texts[i].style.display = "flex";   
                        }
+
                    }
        
            }   
@@ -92,10 +90,11 @@
                     
                    for(let i = 0; i<boxes.length; i++){
                        let box = boxes[i];
+                       let txt = texts[i];
                        if(box.checked){
-                        
+                        texts[i].style.display = "flex"; 
                        }else{
-                         texts[i].style.display = "none";   
+                        texts[i].style.display = "none";
                        }
                    }
        
