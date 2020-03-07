@@ -14,8 +14,7 @@
            //-----Markera föremål som färdiga.---//
            select.setAttribute("type","checkbox"); 
            select.setAttribute("class","box");
-           button.setAttribute("class","delete");
-           label.setAttribute("class", "box-label" );
+         
     
            let d = new Date();
            select.setAttribute("id", d);
