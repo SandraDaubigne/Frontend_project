@@ -47,6 +47,14 @@
             document.getElementById('myForm').reset();   
            }
 
+              //Se hur många ofärdiga föremål som återstår ("X items left")för tryck på selectknapparna
+              select.addEventListener("click", function(){ 
+       
+                let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
+                document.getElementById("left").innerHTML = items;
+                // alert(document.querySelectorAll('input[type="checkbox"]:checked').length);
+             });
+
           
        
        
@@ -54,7 +62,8 @@
 
 
        
-            //Se hur många ofärdiga föremål som återstår ("X items left").
+            //Se hur många ofärdiga föremål som återstår ("X items left") för funktioner med
+            //
             function itemLeft(){
                 let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
                 document.getElementById("left").innerHTML = items;
@@ -71,11 +80,13 @@
            }
        
            function showAll(){
+           
                let texts = document.querySelectorAll('li');
                    for(let i = 0; i<texts.length; i++){ 
                        let txt = texts[i];
                        texts[i].style.display = "flex";
-                   }      
+                   }   
+                   itemLeft();    
            }
        
            function active(){
