@@ -10,6 +10,8 @@
            select = document.createElement('input'),
            button = document.createElement('button'),
            textNode = document.createTextNode(item);
+
+           
        
            //-----Markera föremål som färdiga.---//
            select.setAttribute("type","checkbox"); 
@@ -21,6 +23,7 @@
            label.setAttribute("for", d);       
        
            writeFromScript();
+           resetForm();
            
            //-----Ta bort föremål------- //      
            button.addEventListener("click", function(){    
@@ -35,7 +38,13 @@
                li.appendChild(textNode);
                li.appendChild(button);   
            
-               event.preventDefault();   
+               event.preventDefault();  
+               
+        
+           }
+           //KOMPLETTERING - rensar formuläret på text vid enter
+           function resetForm(){
+            document.getElementById('myForm').reset();   
            }
        
           //Se hur många ofärdiga föremål som återstår ("X items left").
