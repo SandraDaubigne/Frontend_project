@@ -24,12 +24,8 @@
        
            writeFromScript();
            resetForm();
-           
-           //-----Ta bort föremål------- //      
-           button.addEventListener("click", function(){    
-           list.removeChild(li);
-           list.removeChild(select);
-           });  
+           itemLeft();
+         
        
            function writeFromScript(){
                list.appendChild(li);
@@ -42,6 +38,7 @@
                
         
            }
+
            //KOMPLETTERING - rensar formuläret på text vid enter
            function resetForm(){
             document.getElementById('myForm').reset();   
@@ -49,11 +46,17 @@
 
               //Se hur många ofärdiga föremål som återstår ("X items left")för tryck på selectknapparna
               select.addEventListener("click", function(){ 
-       
                 let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
                 document.getElementById("left").innerHTML = items;
                 // alert(document.querySelectorAll('input[type="checkbox"]:checked').length);
              });
+
+              //-----Ta bort föremål------- //      
+            button.addEventListener("click", function(){    
+            list.removeChild(li);
+            list.removeChild(select);
+            itemLeft();
+            }); 
 
           
        
