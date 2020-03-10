@@ -117,7 +117,7 @@ h1{
 }
 
 #buttons label span{
-  font-size: 1.5vw;
+  font-size: 2vw;
   margin: 1vw;
 
 }
@@ -132,4 +132,15 @@ h1{
   font-size: 1vw;
   margin: 0.5vw;
   color: grey;
+}
+
+@media (max-width: 600px){
+    
+    #buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  
+  }
+
 }

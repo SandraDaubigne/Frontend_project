@@ -55,85 +55,93 @@
             select.addEventListener("click", function(){ 
                 let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
                 document.getElementById("left").innerHTML = items;
+                itemLeft();
             });
 
-        
-            //Se hur många ofärdiga föremål som återstår ("X items left")för funktioner
-            function itemLeft(){
-                let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
-                document.getElementById("left").innerHTML = items;
-            }    
+      //Se hur många ofärdiga föremål som återstår ("X items left")för funktioner
+    function itemLeft(){
+        let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
+        document.getElementById("left").innerHTML = items;
+    }   
+            
        
-       
-       }//Slut på mamma funktion
+    }//Slut på mamma funktion
 
-           //------Markera alla föremål som färdiga/ofärdiga.--//
-           function selectAll(source) {
-               let checkboxes = document.getElementsByClassName('box');
-               for(let i=0, n=checkboxes.length; i<n; i++) {
-               checkboxes[i].checked = source.checked;
-               }
-               itemLeft();
-           }
-       
-           function showAll(){
-           
-               let texts = document.querySelectorAll('li');
-                   for(let i = 0; i<texts.length; i++){ 
-                       let txt = texts[i];
-                       texts[i].style.display = "flex";
-                   }   
-                   itemLeft();    
-           }
-       
-           function active(){
-               let texts = document.querySelectorAll('li');
-               let boxes = document.querySelectorAll('.box');
-                    
-                   for(let i = 0; i<boxes.length; i++){
-                       let box = boxes[i];
-                       let txt = texts[i];
-                       if(box.checked){
-                        texts[i].style.display = "none";  
-                       }else{
-                        texts[i].style.display = "flex";   
-                       }
+    //Se hur många ofärdiga föremål som återstår ("X items left")för funktioner
+    function itemLeft(){
+        let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
+        document.getElementById("left").innerHTML = items;
+    }   
+    
+    
+    //------Markera alla föremål som färdiga/ofärdiga.--//
+    function selectAll(source) {
+        let checkboxes = document.getElementsByClassName('box');
+        for(let i=0, n=checkboxes.length; i<n; i++) {
+        checkboxes[i].checked = source.checked;
+        }
+        itemLeft();
+    }
 
-                   }
-       
-           }   
            
        
-           function completed(){
-               let texts = document.querySelectorAll('li');
-               let boxes = document.querySelectorAll('.box');
-                    
-                   for(let i = 0; i<boxes.length; i++){
-                       let box = boxes[i];
-                       let txt = texts[i];
-                       if(box.checked){
-                        texts[i].style.display = "flex"; 
-                       }else{
-                        texts[i].style.display = "none";
-                       }
-                   }
+    function showAll(){
+        let texts = document.querySelectorAll('li');
+            for(let i = 0; i<texts.length; i++){ 
+                let txt = texts[i];
+                texts[i].style.display = "flex";
+            }   
+            itemLeft();    
+    }
        
-           } 
+    function active(){
+        let texts = document.querySelectorAll('li');
+        let boxes = document.querySelectorAll('.box');
+            
+            for(let i = 0; i<boxes.length; i++){
+                let box = boxes[i];
+                let txt = texts[i];
+                if(box.checked){
+                texts[i].style.display = "none";  
+                }else{
+                texts[i].style.display = "flex";   
+                }
+
+            }
+
+        }   
            
-           function removeCompleted(){
-                   let texts = document.querySelectorAll('li');
-                   let boxes = document.querySelectorAll('.box');
-                    
-                   for(let i = 0; i<boxes.length; i++){
-                       let box = boxes[i];
-                       let txt = texts[i];
-                       if(box.checked){
-                           box.parentNode.removeChild(box);
-                           txt.parentNode.removeChild(txt);
-                       }
-                   }
-           }
        
+    function completed(){
+        let texts = document.querySelectorAll('li');
+        let boxes = document.querySelectorAll('.box');
+            
+            for(let i = 0; i<boxes.length; i++){
+                let box = boxes[i];
+                let txt = texts[i];
+                if(box.checked){
+                texts[i].style.display = "flex"; 
+                }else{
+                texts[i].style.display = "none";
+                }
+            }
+
+        } 
+           
+        function removeCompleted(){
+                let texts = document.querySelectorAll('li');
+                let boxes = document.querySelectorAll('.box');
+                
+                for(let i = 0; i<boxes.length; i++){
+                    let box = boxes[i];
+                    let txt = texts[i];
+                    if(box.checked){
+                        box.parentNode.removeChild(box);
+                        txt.parentNode.removeChild(txt);
+                    }
+                }
+        }
+    
            
        
            
