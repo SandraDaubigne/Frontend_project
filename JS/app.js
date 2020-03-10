@@ -46,17 +46,20 @@
            function resetForm(){
             document.getElementById('myForm').reset();   
            }
-       
-          //Se hur många ofärdiga föremål som återstår ("X items left").
-           select.addEventListener("click", function(){ 
-       
-               let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
-               document.getElementById("left").innerHTML = items;
-               // alert(document.querySelectorAll('input[type="checkbox"]:checked').length);
-            });
+
+          
        
        
        }//Slut på mamma funktion
+
+
+       
+            //Se hur många ofärdiga föremål som återstår ("X items left").
+            function itemLeft(){
+                let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
+                document.getElementById("left").innerHTML = items;
+               }
+           
        
            //------Markera alla föremål som färdiga/ofärdiga.--//
            function selectAll(source) {
@@ -64,6 +67,7 @@
                for(let i=0, n=checkboxes.length; i<n; i++) {
                checkboxes[i].checked = source.checked;
                }
+               itemLeft();
            }
        
            function showAll(){
