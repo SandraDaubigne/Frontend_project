@@ -44,35 +44,29 @@
             document.getElementById('myForm').reset();   
            }
 
-              //Se hur många ofärdiga föremål som återstår ("X items left")för tryck på selectknapparna
-              select.addEventListener("click", function(){ 
+            //-----Ta bort föremål------- //      
+            button.addEventListener("click", function(){       
+                list.removeChild(li);
+                li.removeChild(select);
+                itemLeft();
+            });
+
+            //Se hur många ofärdiga föremål som återstår ("X items left")för tryck på selectknapparna
+            select.addEventListener("click", function(){ 
                 let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
                 document.getElementById("left").innerHTML = items;
-                // alert(document.querySelectorAll('input[type="checkbox"]:checked').length);
-             });
+            });
 
-              //-----Ta bort föremål------- //      
-            button.addEventListener("click", function(){    
-            list.removeChild(li);
-            list.removeChild(select);
-            itemLeft();
-            }); 
-
-          
+        
+            //Se hur många ofärdiga föremål som återstår ("X items left")för funktioner
+            function itemLeft(){
+                let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
+                document.getElementById("left").innerHTML = items;
+            }    
        
        
        }//Slut på mamma funktion
 
-
-       
-            //Se hur många ofärdiga föremål som återstår ("X items left") för funktioner med
-            //
-            function itemLeft(){
-                let items = document.querySelectorAll('input[type="checkbox"]:not(:checked).box').length;
-                document.getElementById("left").innerHTML = items;
-               }
-           
-       
            //------Markera alla föremål som färdiga/ofärdiga.--//
            function selectAll(source) {
                let checkboxes = document.getElementsByClassName('box');
