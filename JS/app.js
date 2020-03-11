@@ -1,6 +1,7 @@
      
 //Mammafunktionen
 
+
     //------Lägga till föremål---//
     function addItemToList(){
         const item = document.getElementById('todo').value,
@@ -83,8 +84,7 @@
         itemLeft();
     }
 
-           
-       
+             
     function showAll(){
         let texts = document.querySelectorAll('li');
             for(let i = 0; i<texts.length; i++){ 
